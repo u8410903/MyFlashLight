@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.frozenmeatball.myflashlight" >
+
+    <!-- Include required permissions for Google Mobile Ads to run-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="17" />
+     
+    <uses-permission android:name="android.permission.CAMERA" />
+        
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+     
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+     
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+     
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+     
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="簡易手電筒"
+        android:theme="@style/AppTheme" >
+    <!--This meta-data tag is required to use Google Play Services.-->
+    <meta-data
+        android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".MainActivity"
+            android:label="簡易手電筒"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--Include the AdActivity configChanges and theme. -->
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+
+    </application>
+
+</manifest>
