@@ -24,8 +24,8 @@ public class Flashlight extends BaseActivity {
 
         LayoutParams laParams = (LayoutParams) mImageViewFlashlightController
                 .getLayoutParams();
-        laParams.height = point.y * 3 / 4;
-        laParams.width = point.x / 3;
+        laParams.height = point.y / 2;
+        laParams.width = point.x / 2;
 
         mImageViewFlashlightController.setLayoutParams(laParams);
 
@@ -45,10 +45,10 @@ public class Flashlight extends BaseActivity {
         }
     }
 
+    //  開啟閃光燈
     protected void openFlashlight() {
-        TransitionDrawable drawable = (TransitionDrawable) mImageViewFlashlight
-                .getDrawable();
-        drawable.startTransition(200);
+        TransitionDrawable drawable = (TransitionDrawable) mImageViewFlashlight.getDrawable();
+        drawable.startTransition(100);
         mImageViewFlashlight.setTag(true);
 
         try {
@@ -67,11 +67,11 @@ public class Flashlight extends BaseActivity {
         }
     }
 
+    //  關閉閃光燈
     protected void closeFlashlight() {
-        TransitionDrawable drawable = (TransitionDrawable) mImageViewFlashlight
-                .getDrawable();
+        TransitionDrawable drawable = (TransitionDrawable) mImageViewFlashlight.getDrawable();
         if (((Boolean) mImageViewFlashlight.getTag())) {
-            drawable.reverseTransition(200);
+            drawable.reverseTransition(100);
             mImageViewFlashlight.setTag(false);
             if (mCamera != null) {
                 mParameters = mCamera.getParameters();

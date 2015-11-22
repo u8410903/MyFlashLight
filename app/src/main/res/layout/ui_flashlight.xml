@@ -12,13 +12,6 @@
         android:layout_height="match_parent"
         android:src="@drawable/flashlight" />
 
-    <ImageView
-        android:id="@+id/imageview_flashlight_controller"
-        android:layout_width="100dp"
-        android:layout_height="320dp"
-        android:layout_gravity="bottom|center_horizontal"
-        android:onClick="onClick_Flashlight"  />
-
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
         android:layout_width="wrap_content"
@@ -29,5 +22,12 @@
         ads:adUnitId="@string/banner_ad_unit_id"
         android:layout_gravity="center_horizontal|bottom">
     </com.google.android.gms.ads.AdView>
+
+    <ImageView
+        android:id="@+id/imageview_flashlight_controller"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:onClick="onClick_Flashlight"  />
 
 </FrameLayout>
